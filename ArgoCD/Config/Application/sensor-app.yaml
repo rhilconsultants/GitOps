@@ -1,0 +1,33 @@
+project: gitops-workshop
+source:
+  repoURL: 'https://github.com/rhilconsultants/GitOps.git'
+  path: ArgoCD/Manifests
+  targetRevision: main
+  directory:
+    recurse: true
+    jsonnet: {}
+destination:
+  server: 'https://kubernetes.default.svc'
+  namespace: '*'
+syncPolicy:
+  automated:
+    prune: true
+    selfHeal: true
+spec:
+  ignoreDifferences:
+  - group: apps
+    kind: Route
+    jsonPointers:
+    - /spec/host
+  - group: apps
+    kind: Service
+    jsonPointers:
+    - /spec/clusterIPs
+  - group: apps
+    kind: Service
+    jsonPointers:
+    - /spec/clusterIP
+  - group: apps
+    kind: Deployment
+    jsonPointers:
+    - /spec/replicas
