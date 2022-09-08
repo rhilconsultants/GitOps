@@ -1,7 +1,7 @@
 FROM registry.access.redhat.com/ubi8/nodejs-16:latest
 
 # Create app directory
-WORKDIR /tmp
+WORKDIR /home
 
 # Install app dependencies
 # A wildcard is used to ensure both package.json AND package-lock.json are copied
