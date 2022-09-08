@@ -2,7 +2,7 @@ kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
   name: workspace
-  namespace: nodejs-demo
+  namespace: sensor-app
 spec:
   accessModes:
     - ReadWriteMany
