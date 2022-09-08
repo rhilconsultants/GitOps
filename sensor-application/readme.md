@@ -26,3 +26,5 @@ Under the Postman folder there is an Export of all the GET Call's
 
 Build a new image from ubi8 NodeJS16 latest.
 
+###a ready image can be found @quay.io/thason/sensor-app:latest###
+
