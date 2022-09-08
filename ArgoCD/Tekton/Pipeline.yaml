@@ -28,19 +28,19 @@ spec:
     - default: nodejs
       name: APP_NAME
       type: string
-    - default: 'https://github.com/Tal-Hason/NodeJS-deployment-demo.git'
+    - default: 'https://github.com/rhilconsultants/GitOps.git'
       name: GIT_REPO
       type: string
     - default: main
       name: GIT_REVISION
       type: string
-    - default: quay.io/thason/node-hello-world
+    - default: quay.io/thason/sensor-app
       name: IMAGE_NAME
       type: string
-    - default: .
+    - default: .\sensor-application
       name: PATH_CONTEXT
       type: string
-    - default: quay.io/thason/node-hello-world
+    - default: quay.io/thason/sensor-app
       name: QUAY_IMAGE
       type: string
     - default: latest
@@ -70,8 +70,6 @@ spec:
         - name: gitInitImage
           value: >-
             registry.redhat.io/openshift-pipelines/pipelines-git-init-rhel8:v1.7.2-11
-      runAfter:
-        - clean-chart
       taskRef:
         kind: ClusterTask
         name: git-clone
@@ -100,99 +98,5 @@ spec:
       workspaces:
         - name: source
           workspace: workspace
-    - name: update-chart
-      params:
-        - name: git-url-source
-          value: github.com
-        - name: git-user
-          value: Tal-Hason
-        - name: git-repo-name
-          value: NodeJS-deployment-demo
-        - name: tag
-          value: $(params.IMAGE_TAG)
-        - name: branch
-          value: $(params.GIT_REVISION)
-        - name: git-secret-name
-          value: $(params.SECRET_NAME)
-      runAfter:
-        - build
-      taskRef:
-        kind: ClusterTask
-        name: update-chart
-    - name: update-argocd-app
-      params:
-        - name: git-url-source
-          value: github.com
-        - name: git-user
-          value: Tal-Hason
-        - name: git-repo-name
-          value: NodeJS-deployment-demo
-        - name: tag
-          value: $(params.IMAGE_TAG)
-        - name: branch
-          value: $(params.GIT_REVISION)
-        - name: git-secret-name
-          value: $(params.SECRET_NAME)
-        - name: namespace
-          value: $(params.NAMESPACE)
-        - name: git-full-url
-          value: $(params.GIT_REPO)
-        - name: application-name
-          value: $(params.APP_NAME)
-        - name: project-name
-          value: $(params.ARGO_PROJECT)
-      runAfter:
-        - update-argocd-proj
-      taskRef:
-        kind: ClusterTask
-        name: update-argocd-app
-    - name: update-argocd-proj
-      params:
-        - name: git-url-source
-          value: github.com
-        - name: git-user
-          value: Tal-Hason
-        - name: git-repo-name
-          value: NodeJS-deployment-demo
-        - name: tag
-          value: $(params.IMAGE_TAG)
-        - name: branch
-          value: $(params.GIT_REVISION)
-        - name: project-name
-          value: $(params.ARGO_PROJECT)
-        - name: git-secret-name
-          value: $(params.SECRET_NAME)
-        - name: namespace
-          value: $(params.NAMESPACE)
-        - name: git-full-url
-          value: $(params.GIT_REPO)
-      runAfter:
-        - update-chart
-      taskRef:
-        kind: ClusterTask
-        name: update-argocd-proj
-    - name: clean-chart
-      params:
-        - name: git-url-source
-          value: github.com
-        - name: git-user
-          value: Tal-Hason
-        - name: git-repo-name
-          value: NodeJS-deployment-demo
-        - name: tag
-          value: $(params.IMAGE_TAG)
-        - name: branch
-          value: $(params.GIT_REVISION)
-        - name: project-name
-          value: $(params.ARGO_PROJECT)
-        - name: git-secret-name
-          value: $(params.SECRET_NAME)
-        - name: namespace
-          value: $(params.NAMESPACE)
-        - name: git-full-url
-          value: $(params.GIT_REPO)
-      taskRef:
-        kind: ClusterTask
-        name: clean-chart
   workspaces:
     - name: workspace
