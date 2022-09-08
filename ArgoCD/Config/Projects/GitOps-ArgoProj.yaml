@@ -11,9 +11,6 @@ spec:
     - name: '*'
       namespace: '*'
       server: '*'
-  namespaceResourceBlacklist:
-    - group: '*'
-      kind: openshift*
   namespaceResourceWhitelist:
     - group: '*'
       kind: '*'
