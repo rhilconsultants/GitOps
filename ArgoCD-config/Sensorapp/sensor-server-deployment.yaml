@@ -26,7 +26,7 @@ spec:
     spec:
       containers:
         - name: sensor-app-server
-          image: 'quay.io/thason/sensor-app:v5'
+          image: 'quay.io/thason/sensor-app:v6'
           ports:
             - containerPort: 8081
               protocol: TCP
