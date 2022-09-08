@@ -59,5 +59,5 @@ app.get('/oxygen', function (req, res) {
  var server = app.listen(8081, function () {
    var host = server.address().address
    var port = server.address().port
-   console.log("Enviourmnet Sensor Server Lisetning @ http://%s:%s", host, port)
+   console.log("Enviourmnet Sensor Server Lisetning live @ http://%s:%s", host, port)
 })
