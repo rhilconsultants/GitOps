@@ -1,0 +1,15 @@
+project: gitops-workshop
+source:
+  repoURL: 'https://github.com/rhilconsultants/GitOps.git'
+  path: ArgoCD-config
+  targetRevision: main
+  directory:
+    recurse: true
+    jsonnet: {}
+destination:
+  server: 'https://kubernetes.default.svc'
+  namespace: sensor-app
+syncPolicy:
+  automated:
+    prune: true
+    selfHeal: true
