@@ -1,0 +1,61 @@
+{
+    "read1" : {
+       "value" : "10",
+       "status" : "Good",
+       "id": 1
+    },
+    
+    "read2" : {
+       "value" : "20",
+       "status" : "Good",
+       "id": 2
+    },
+    
+    "read3" : {
+      "value" : "30",
+       "status" : "Good",
+       "id": 3
+    },
+    
+    "read4" : {
+       "value" : "40",
+       "status" : "Good",
+       "id": 4
+    },
+    
+    "read5" : {
+       "value" : "50",
+       "status" : "Good",
+       "id": 5
+    },
+    
+    "read6" : {
+       "value" : "60",
+       "status" : "Warrning!",
+       "id": 6
+    },
+    
+    "read7" : {
+       "value" : "70",
+       "status" : "Warrning!",
+        "id": 7
+    },
+    
+    "read8" : {
+       "value" : "80",
+       "status" : "Bad!!!",
+       "id": 8
+    },
+    
+    "read9" : {
+       "value" : "90",
+       "status" : "Bad!!!",
+       "id": 9
+    },
+    
+    "read10" : {
+       "value" : "100",
+       "status" : "Bad!!!",
+       "id": 10
+    }
+ }
