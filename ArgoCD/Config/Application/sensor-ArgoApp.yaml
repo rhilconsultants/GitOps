@@ -8,7 +8,7 @@ source:
     jsonnet: {}
 destination:
   server: 'https://kubernetes.default.svc'
-  namespace: sensor-app
+  namespace: '*'
 syncPolicy:
   automated:
     prune: true
