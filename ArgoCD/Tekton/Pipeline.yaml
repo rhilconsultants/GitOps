@@ -25,7 +25,7 @@ spec:
         - name: manifest-dir
           workspace: workspace
   params:
-    - default: nodejs
+    - default: sensor-app-server
       name: APP_NAME
       type: string
     - default: 'https://github.com/rhilconsultants/GitOps.git'
@@ -40,23 +40,8 @@ spec:
     - default: .\sensor-application
       name: PATH_CONTEXT
       type: string
-    - default: quay.io/thason/sensor-app
-      name: QUAY_IMAGE
-      type: string
     - default: latest
       name: IMAGE_TAG
-      type: string
-    - default: git-user
-      name: SECRET_NAME
-      type: string
-    - default: nodejs-demo
-      name: NAMESPACE
-      type: string
-    - default: nodejs-app
-      name: ARGO_PROJECT
-      type: string
-    - default: argocd-application-folder
-      name: APP_OF_APPS
       type: string
   tasks:
     - name: fetch-repository
