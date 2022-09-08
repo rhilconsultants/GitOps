@@ -13,3 +13,17 @@ syncPolicy:
   automated:
     prune: true
     selfHeal: true
+spec:
+  ignoreDifferences:
+  - group: apps
+    kind: Route
+    jsonPointers:
+    - /spec/host
+  - group: apps
+    kind: Service
+    jsonPointers:
+    - /spec/clusterIPs
+  - group: apps
+    kind: Service
+    jsonPointers:
+    - /spec/clusterIP
