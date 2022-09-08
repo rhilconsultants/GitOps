@@ -21,7 +21,7 @@ spec:
       targetPort: 8081
   internalTrafficPolicy: Cluster
   clusterIPs:
-    - 
+    - 10.217.5.111
   type: ClusterIP
   ipFamilyPolicy: SingleStack
   sessionAffinity: None
