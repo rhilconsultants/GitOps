@@ -1,0 +1,9 @@
+kind: Secret
+apiVersion: v1
+metadata:
+  name: qauy.io
+  namespace: sensor-app
+data:
+  .dockerconfigjson: >-
+    eyJhdXRocyI6eyJxdWF5LmlvIjp7InVzZXJuYW1lIjoidGhhc29uIiwicGFzc3dvcmQiOiI2ZkZyWXdSNno3QUhJSHAweGNEYVhIL0NJb0xVOVRMMGVPdDRpcDRZTnBiOVpzbWhycW5CcklVWVg4aTk3L1kzSnFUY2VpYWFBZHNnQkQxWlluY1k1QT09IiwiYXV0aCI6ImRHaGhjMjl1T2pabVJuSlpkMUkyZWpkQlNFbEljREI0WTBSaFdFZ3ZRMGx2VEZVNVZFd3daVTkwTkdsd05GbE9jR0k1V25OdGFISnhia0p5U1ZWWldEaHBPVGN2V1ROS2NWUmpaV2xoWVVGa2MyZENSREZhV1c1aldUVkJQVDA9IiwiZW1haWwiOiIifX19
+type: kubernetes.io/dockerconfigjson
