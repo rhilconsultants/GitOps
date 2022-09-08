@@ -1,0 +1,22 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: gitops-workshop
+  namespace: openshift-gitops
+spec:
+  clusterResourceWhitelist:
+    - group: '*'
+      kind: '*'
+  destinations:
+    - name: '*'
+      namespace: '*'
+      server: '*'
+  namespaceResourceBlacklist:
+    - group: '*'
+      kind: openshift*
+  namespaceResourceWhitelist:
+    - group: '*'
+      kind: '*'
+  sourceRepos:
+    - '*'
+

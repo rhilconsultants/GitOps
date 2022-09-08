@@ -1,0 +1,100 @@
+{
+	"info": {
+		"_postman_id": "98f1defb-875d-4fd9-a2a2-4ad0c5c93571",
+		"name": "sensor app",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23232602"
+	},
+	"item": [
+		{
+			"name": "Get All Humidity Reads",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{host}}/listhumidityreads",
+					"protocol": "http",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"listhumidityreads"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Humidity Read",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{host}}/humidity",
+					"protocol": "http",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"humidity"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Oxygen Reads",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{host}}/listoxygenreads",
+					"protocol": "http",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"listoxygenreads"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Oxygen read",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{host}}/oxygen",
+					"protocol": "http",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"oxygen"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Health Chech",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{host}}/healthy",
+					"protocol": "http",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"healthy"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
