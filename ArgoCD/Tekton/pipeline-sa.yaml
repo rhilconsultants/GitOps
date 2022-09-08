@@ -1,0 +1,17 @@
+kind: ServiceAccount
+apiVersion: v1
+metadata:
+  name: pipeline
+  namespace: sensor-app
+  ownerReferences:
+    - apiVersion: operator.tekton.dev/v1alpha1
+      kind: TektonConfig
+      name: config
+      uid: 989557df-1972-4b46-91d6-33166abb7958
+      controller: false
+      blockOwnerDeletion: true
+secrets:
+  - name: pipeline-dockercfg-887zs
+  - name: quay.io
+imagePullSecrets:
+  - name: pipeline-dockercfg-887zs
