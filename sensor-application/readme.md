@@ -18,7 +18,7 @@ Provide 2 GET request
 '/listhumidityreads' To get all humidity readings
 
 ---
-## Postman Collectionm and Enviourment ##
+## Postman Collection and Enviourment ##
 
 Under the Postman folder there is an Export of all the GET Call's
 
