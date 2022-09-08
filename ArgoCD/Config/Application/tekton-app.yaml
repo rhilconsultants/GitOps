@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: tekton-pipeline
+spec:
+  destination:
+    name: ''
+    namespace: '*'
+    server: 'https://kubernetes.default.svc'
+  source:
+    path: ArgoCD/Tekton
+    repoURL: 'https://github.com/rhilconsultants/GitOps.git'
+    targetRevision: main
+    directory:
+      recurse: true
+  project: gitops-workshop
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
