@@ -9,7 +9,6 @@ WORKDIR /home
 
 COPY sensor-application/package*.json ./
 
-RUN mkdir node_modules
 # update the base image
 RUN npm install && npm audit fix
 # If you are building your code for production
