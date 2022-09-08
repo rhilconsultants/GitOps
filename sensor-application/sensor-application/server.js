@@ -2,7 +2,7 @@ var express = require('express');
 var app = express();
 var fs = require("fs");
 
-// Get All Users requsets
+// Get All Humidity Reads
 app.get('/listhumidityreads', function (req, res) {
    fs.readFile("humidity.json", 'utf8', function (err, data) {
       console.log( data );
@@ -10,7 +10,7 @@ app.get('/listhumidityreads', function (req, res) {
    });
 })
 
- // Get User By ID
+ // Get a random Read
  app.get('/humidity', function (req, res) {
     // First read existing users.
     fs.readFile("humidity.json", 'utf8', function (err, data) {
