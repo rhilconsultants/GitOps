@@ -25,18 +25,11 @@ spec:
         openshift.io/generated-by: OpenShiftWebConsole
     spec:
       containers:
-        - name: sensor-app-server
+        - name: sensor-app
           image: 'quay.io/thason/sensor-app:v6'
           ports:
             - containerPort: 8081
               protocol: TCP
-          resources:
-            limits:
-              cpu: '2'
-              memory: 512mib
-            requests:
-              cpu: 500m
-              memory: 256mib
           livenessProbe:
             httpGet:
               path: '/healthy'
