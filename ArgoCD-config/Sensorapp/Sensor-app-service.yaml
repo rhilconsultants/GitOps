@@ -1,0 +1,31 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: sensor-app-server
+  namespace: sensor-app
+  labels:
+    app: sensor-app-server
+    app.kubernetes.io/component: sensor-app-server
+    app.kubernetes.io/instance: sensor-app-server
+    app.kubernetes.io/name: sensor-app-server
+    app.kubernetes.io/part-of: sensor-app
+    app.openshift.io/runtime-version: v1
+spec:
+  clusterIP: 10.217.5.111
+  ipFamilies:
+    - IPv4
+  ports:
+    - name: 8081-tcp
+      protocol: TCP
+      port: 8081
+      targetPort: 8081
+  internalTrafficPolicy: Cluster
+  clusterIPs:
+    - 10.217.5.111
+  type: ClusterIP
+  ipFamilyPolicy: SingleStack
+  sessionAffinity: None
+  selector:
+    app: sensor-app-server
+    deployment: sensor-app-server
+
