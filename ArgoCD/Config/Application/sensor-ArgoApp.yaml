@@ -1,7 +1,7 @@
 project: gitops-workshop
 source:
   repoURL: 'https://github.com/rhilconsultants/GitOps.git'
-  path: ArgoCD-config
+  path: ArgoCD/Manifests
   targetRevision: main
   directory:
     recurse: true

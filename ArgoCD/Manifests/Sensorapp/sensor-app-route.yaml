@@ -1,0 +1,22 @@
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: sensor-app-server
+  namespace: sensor-app
+  labels:
+    app: sensor-app-server
+    app.kubernetes.io/component: sensor-app-server
+    app.kubernetes.io/instance: sensor-app-server
+    app.kubernetes.io/name: sensor-app-server
+    app.kubernetes.io/part-of: sensor-app
+    app.openshift.io/runtime-version: v1
+spec:
+
+  to:
+    kind: Service
+    name: sensor-app-server
+    weight: 100
+  port:
+    targetPort: 8081-tcp
+  wildcardPolicy: None
+
