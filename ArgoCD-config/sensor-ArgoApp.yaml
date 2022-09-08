@@ -27,3 +27,7 @@ spec:
     kind: Service
     jsonPointers:
     - /spec/clusterIP
+  - group: apps
+    kind: Deployment
+    jsonPointers:
+    - /spec/replicas
