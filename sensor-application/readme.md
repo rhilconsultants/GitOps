@@ -28,3 +28,5 @@ Build a new image from ubi8 NodeJS16 latest.
 
 ###a ready image can be found @quay.io/thason/sensor-app:latest###
 
+Contianer Expose Port 8081 with http application
+
