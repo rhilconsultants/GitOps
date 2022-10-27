@@ -1,0 +1,20 @@
+FROM golang:alpine AS builder
+
+RUN mkdir -p /opt/app-root/src/sreading
+WORKDIR /opt/app-root/src/sreading
+ENV GOPATH=/opt/app-root/
+ENV PATH="${PATH}:/opt/app-root/src/go/bin/"
+COPY  src/sreading .
+
+RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o sreading
+
+FROM scratch
+#FROM ubi8/ubi-minimal
+COPY --from=builder  /etc/passwd /etc/passwd
+COPY --from=builder  /opt/app-root/src/sreading/sreading /usr/bin/
+COPY ca.crt /etc/ssl/certs/ca-certificates.crt
+USER nobody
+
+EXPOSE 9500
+
+CMD ["/usr/bin/sreading"]
